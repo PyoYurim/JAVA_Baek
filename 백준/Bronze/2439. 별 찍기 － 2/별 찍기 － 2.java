@@ -10,8 +10,8 @@ public class Main {
 			for (int j = 1; j < N - i; j++) {
 				System.out.print(" ");
 			}
-			for (int t = 1; t <= i + 1; t++) {
-				System.out.print("*");
+			for(int t = 1; t <= i+1; t++ ) {
+				System.out.print("*");	
 			}
 			System.out.println();
 		}

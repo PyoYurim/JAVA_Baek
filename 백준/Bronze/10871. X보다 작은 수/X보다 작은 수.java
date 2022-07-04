@@ -12,8 +12,7 @@ public class Main {
 
 		for (int i = 0; i < N; i++) {
 			if (X > Integer.parseInt(A[i])) {
-				System.out.print(A[i]);
-				System.out.print(" ");
+				System.out.print(A[i] + " ");
 			}
 		}
 	}

@@ -1,21 +1,22 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int cycleNum = Integer.parseInt(br.readLine());
-		int orignNum = cycleNum;
-		int index = 0;
+
+		int N = Integer.parseInt(br.readLine());
+		int org = N;
+		int G = 0;
 		while (true) {
-				int a = cycleNum / 10;
-				int b = cycleNum % 10;
-				int x = (a + b) % 10;
-				cycleNum = (b * 10) + x;
-				++index;
-			if (cycleNum == orignNum) {
-				System.out.println(index);
+			int i = org / 10;
+			int j = org % 10;
+			
+            int fir = i + j;
+			org = j * 10 + fir % 10;
+			
+            G++;
+			if (org == N) {
+				System.out.println(G);
 				break;
 			}
 		}

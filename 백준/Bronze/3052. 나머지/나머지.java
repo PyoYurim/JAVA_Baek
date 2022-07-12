@@ -7,7 +7,6 @@ public class Main {
 		int[] num = new int[10];
 		int index = 0;
 		int[] exam = new int[42];
-		int k = 0;
 
 		for (int i = 0; i < 10; i++) {
 			num[i] = Integer.parseInt(br.readLine()) % 42;

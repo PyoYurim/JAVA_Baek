@@ -3,22 +3,25 @@ import java.io.*;
 public class Main {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int index = Integer.parseInt(br.readLine());
-		float avg = 0;
-		for (int i = 0; i < index; i++) {
-			float sum = 0;
-			float num = 0;
-			String str[] = br.readLine().split(" ");
-			for (int j = 0; j < str.length - 1; j++) {
-				sum += Float.parseFloat(str[j + 1]);
+
+		int N = Integer.parseInt(br.readLine());
+
+		for (int i = 0; i < N; i++) {
+			double sum = 0;
+			double index = 0;
+			double avg = 0;
+
+			String[] num = br.readLine().split(" ");
+			for (int j = 1; j < Integer.parseInt(num[0]) + 1; j++) {
+				sum += Integer.parseInt(num[j]);
+				avg = sum / Integer.parseInt(num[0]);
 			}
-			avg = sum / Float.parseFloat(str[0]);
-			for (int k = 0; k < str.length - 1; k++) {
-				if (Integer.parseInt(str[k + 1]) > avg) {
-					++num;
+			for (int j = 1; j < Integer.parseInt(num[0]) + 1; j++) {
+				if (Integer.parseInt(num[j]) > avg) {
+					index++;
 				}
 			}
-			System.out.printf("%.3f%%\n", 100 * (num / Integer.parseInt(str[0])));
+			System.out.printf("%.3f%%\n", index/Integer.parseInt(num[0]) * 100);
 		}
 	}
-} 
+}

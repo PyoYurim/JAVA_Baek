@@ -1,27 +1,9 @@
-money = int(input())
-change = 1000-money
+change = 1000 - int(input())
 count = 0
+num = [500, 100, 50, 10, 5, 1]
 
-while True:
-
-    if change >= 500:
-        count = change // 500
-        change %= 500
-    elif change >= 100:
-        count += change // 100
-        change %= 100
-    elif change >= 50:
-        count += change // 50
-        change %= 50
-    elif change >= 10:
-        count += change // 10
-        change %= 10
-    elif change >= 5:
-        count += change // 5
-        change %= 5
-    elif change >= 1:
-        count += change // 1
-        change %= 1
-    elif change == 0:
-        print(count)
-        break
+for x in num:
+    if change >= x:
+        count += change // x
+        change %= x
+print(count)
